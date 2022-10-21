@@ -1,13 +1,25 @@
-<div class="display-cards">
+<div>    
+  <a routerLink="/inicio" id="botonCreditosMenu">Go back</a> 
+    <br>
+    <br>
+    <h1 id="titulo">Teams NBAPlayers</h1>
+    <br>
+    <div  class="botonDisplay">
+      <button *ngFor="let in of counter() ;let i = index" (click)="getTeamPage(i+1)" ngClass="botonesPagina">
+        <span>{{i+1}}</span>
+      </button>
+    </div>
+    <br>
+    <br>
+  </div>
+  <div class="display-cards">
     <div *ngFor="let team of teamList" class="example-5 alternate-card">
       <div class="wrapper">
+        <img [src]="getPhoto(team)" alt="" style="width: 100%;">
         <div class="data">
           <div class="content">
-            <h1 class="title"><a href="#">{{team.confName}}</a></h1>
+            <h1 class="title"><a href="#">{{team.fullName}}</a></h1>
             <h3><u>Descripción</u></h3>
-            <p>
-                City: {{team.city}} cm
-            </p>
 
           </div>
         </div>
