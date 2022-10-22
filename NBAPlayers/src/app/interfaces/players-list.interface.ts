@@ -16,14 +16,14 @@ export interface Internal {
 }
 
 export interface League {
-    standard:   Sacramento[];
-    africa:     any[];
-    sacramento: Sacramento[];
-    vegas:      Sacramento[];
-    utah:       Sacramento[];
+    standard:   Player[];
+    africa:     Player[];
+    sacramento: Player[];
+    vegas:      Player[];
+    utah:       Player[];
 }
 
-export interface Sacramento {
+export interface Player {
     firstName:             string;
     lastName:              string;
     temporaryDisplayName?: string;

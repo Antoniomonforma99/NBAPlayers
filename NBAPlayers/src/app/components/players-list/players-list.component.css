@@ -1,0 +1,24 @@
+html{
+  background-color: black;
+  height: 100%;
+}
+.eo {
+  margin: 20px ;
+  font-size: larger;
+  font-weight: bold bolder;
+  color: black;
+  height: 300px;
+
+}
+.espacio  {
+ margin: 20px;
+}
+.background{
+  background-color: black;
+}
+.cover{
+  width:100% !important;
+  height:40% !important;
+  object-fit: cover !important;
+
+}
