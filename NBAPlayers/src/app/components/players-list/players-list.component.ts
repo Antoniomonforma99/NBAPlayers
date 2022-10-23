@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { MatAccordion } from '@angular/material/expansion';
 import { MatPaginator } from '@angular/material/paginator';
 import { Player } from 'src/app/interfaces/players-list.interface';
@@ -19,10 +20,14 @@ export class PlayersListComponent implements OnInit {
   playerList: Player[] = [];
   numPages = 0;
   pageActual = 1;
+  buscar = "";
   constructor(private playerService: PlayersListService) { }
 
   ngOnInit(): void {
-    this.getPlayersPage();
+
+    if(this.buscar == ""){
+      this.getPlayersPage();
+    }
   }
   getUrlImagen(player: Player) {
 
@@ -40,6 +45,17 @@ export class PlayersListComponent implements OnInit {
 
 
     });
+
   }
+ /*  buscador() {
+    this.playerList.forEach(element => {
+      if (element.firstName == this.buscar) {
+
+       this.playerList=[element]
+      }else {
+        this.getPlayersPage();
+      }
+    });
+  } */
 
 }

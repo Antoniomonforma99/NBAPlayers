@@ -4,6 +4,10 @@
   class="cover"
 
 />
+<!--
+    <input type="text" [(ngModel)]="buscar" >
+    <button> <mat-icon (click) ="buscador()">search</mat-icon></button>
+ -->
 <div
   class="background"
   fxLayout="row wrap"
@@ -17,7 +21,7 @@
         | paginate: { itemsPerPage: 9, currentPage: pageActual }
     "
   >
-    <mat-expansion-panel disabled>
+    <mat-expansion-panel disabled class="eo">
       <mat-expansion-panel-header class="eo">
         <h1>
           {{ player.firstName }}
@@ -28,22 +32,25 @@
           [src]="getUrlImagen(player)"
           width="200px"
           height="200px"
+          onerror="this.onerror = null; this.src = 'https:\/\/www.decoravinilos.es/947-big_default_2x/silueta-baloncesto-decoravinilos.jpg'"
           alt="Photo of a Shiba Inu"
         />
       </mat-expansion-panel-header>
     </mat-expansion-panel>
 
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title> Información</mat-panel-title>
-        <mat-panel-description>
+    <mat-expansion-panel class="expansion">
+      <mat-expansion-panel-header class="ce">
+        <mat-panel-title class="ce"> Información</mat-panel-title>
+        <mat-panel-description class="ce">
           Conoce los detalles de este jugador
           <mat-icon>sports_basketball</mat-icon>
         </mat-panel-description>
       </mat-expansion-panel-header>
-      <p>Años jugando de forma profesional: {{ player.yearsPro }}</p>
-      <p>Año de debut profesional: {{ player.nbaDebutYear }}</p>
-      <p>El jugador sigue activo: {{ player.isActive }}</p>
+      <p class="ce">Años jugando de forma profesional: {{ player.yearsPro }}</p>
+      <p class="ce">Año de debut profesional: {{ player.nbaDebutYear }}</p>
+      <p class="ce" *ngIf="player.isActive">El jugador esta activo: Sí</p>
+      <p class="ce" *ngIf="!player.isActive">El jugador esta activo: No</p>
+      <p class="ce">Número de Jersey : {{player.jersey}}</p>
     </mat-expansion-panel>
   </mat-accordion>
   <div style="background-color: lightslategray; width: 100%">

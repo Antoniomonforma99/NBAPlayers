@@ -13,6 +13,6 @@ export class PlayersListService {
 
    }
    getPlayers():Observable<PlayersResponse>{
-    return  this.http.get<PlayersResponse>(`${environment.apiBaseUrl}/data/10s/prod/v1/2020/players.json`)
+    return  this.http.get<PlayersResponse>(`${environment.apiBaseUrl}/data/10s/prod/v1/2022/players.json`)
    }
 }
