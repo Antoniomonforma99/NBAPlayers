@@ -46,6 +46,7 @@
           <mat-icon>sports_basketball</mat-icon>
         </mat-panel-description>
       </mat-expansion-panel-header>
+      <p class="ce">Nombre completo: {{player.firstName}} {{player.lastName}}</p>
       <p class="ce">Años jugando de forma profesional: {{ player.yearsPro }}</p>
       <p class="ce">Año de debut profesional: {{ player.nbaDebutYear }}</p>
       <p class="ce" *ngIf="player.isActive">El jugador esta activo: Sí</p>
