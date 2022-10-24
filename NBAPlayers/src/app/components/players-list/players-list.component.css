@@ -1,5 +1,5 @@
 html{
-  background-color: black;
+  background-color: white ;
   height: 100%;
   font-family: 'AcademicM54' !important;
   color: white;
@@ -20,14 +20,26 @@ html{
 .ce{
   color: white;
 }
+.divBanner{
+  margin: 50px;
+  text-align: center;
+}
+.banner{
+  height: 200px;
+  width: auto;
+}
 
 .espacio  {
  margin: 20px;
  background: linear-gradient(#f03232, #102aeb);
+ justify-content: center;
+ text-align: center;
+ color: white;
+ border-radius: 1cm;
 }
 .background{
 
-  background-color: black;
+  background-color: white;
 
 }
 .cover{

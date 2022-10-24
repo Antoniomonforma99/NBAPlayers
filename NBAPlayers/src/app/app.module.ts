@@ -7,7 +7,10 @@ import { MaterialImportsModule } from './material-imports/material-imports.modul
 import {MatSelectModule} from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TeamsListComponent } from './components/teams-list/teams-list.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PlayersListComponent } from './components/players-list/players-list.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -23,11 +26,11 @@ import { FormsModule } from '@angular/forms';
     MaterialImportsModule,
     HttpClientModule,
     MatSelectModule,
-    FormsModule
+    FormsModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FlexLayoutModule,
-    NgxPaginationModule
+    NgxPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
