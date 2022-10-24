@@ -1,25 +1,33 @@
-<div>    
-  <a routerLink="/inicio" id="botonCreditosMenu">Go back</a> 
-    <br>
-    <br>
-    <h1 id="titulo">Teams NBAPlayers</h1>
-    <br>
-    <div  class="botonDisplay">
-      <button *ngFor="let in of counter() ;let i = index" (click)="getTeamPage(i+1)" ngClass="botonesPagina">
-        <span>{{i+1}}</span>
-      </button>
-    </div>
-    <br>
-    <br>
-  </div>
+<div class="divBanner">
+  <a routerLink="/inicio"><img class="banner" src="../../../assets/banner.png" alt="NBA Players"></a>
+  
+</div>
+
+
+
+<div class="filter">
+  <mat-form-field appearance="fill" class="selector">
+    <mat-label>Select year</mat-label>
+    <mat-select name="year" [(ngModel)]="yearSelected" (selectionChange)="filterByYear(numPages, yearSelected)">
+      <mat-option *ngFor="let year of yearList" [value]="year">
+        {{year}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+
+
   <div class="display-cards">
     <div *ngFor="let team of teamList" class="example-5 alternate-card">
       <div class="wrapper">
         <img [src]="getPhoto(team)" alt="" style="width: 100%;">
         <div class="data">
           <div class="content">
-            <h1 class="title"><a href="#">{{team.fullName}}</a></h1>
-            <h3><u>Descripción</u></h3>
+            <h1 class="title" style="text-decoration: solid;">{{team.fullName}}</h1>
+            <h3><u>Description</u></h3>
+            <h4>City: {{team.city}}</h4>
+            <h4>Full name: {{team.fullName}}</h4>
 
           </div>
         </div>

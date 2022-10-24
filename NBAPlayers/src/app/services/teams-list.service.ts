@@ -12,7 +12,7 @@ export class TeamsListService {
 
   constructor(private http: HttpClient) { }
 
-  public getTeamList(numPage: number, year: string): Observable<TeamResponse>{
+  public getTeamList(numPage: number, year: number): Observable<TeamResponse>{
     
     return this.http.get<TeamResponse>(`${API_BASE_URL}/10s/prod/v1/${year}/teams.json?page=${numPage}`)
   }

@@ -4,6 +4,26 @@
 * {
   box-sizing: border-box;
 }
+.example-button-row {
+  display: table-cell;
+  width: 490px;
+}
+.selector{
+  background-color: white;
+  
+}
+.filter{
+  float: right;
+  margin-right: 80px;
+}
+.divBanner{
+  margin: 50px;
+  text-align: center;
+}
+.banner{
+  height: 200px;
+  width: auto;
+}
 
 body {
   background-image: linear-gradient(to bottom right, #1E1B2D, #828092);
@@ -236,7 +256,7 @@ h1 {
 }
 
 .display-cards {
-  display: flex;
+  display: inline-block;
   justify-content: space-around;
   flex-wrap: wrap;
 }

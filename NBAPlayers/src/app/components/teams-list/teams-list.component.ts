@@ -1,4 +1,5 @@
 
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { League, Team } from 'src/app/interfaces/team.interface';
 import { TeamsListService } from 'src/app/services/teams-list.service';
@@ -14,6 +15,8 @@ export class TeamsListComponent implements OnInit {
 
   teamList: Team[] = [];
   numPages: number = 1;
+  yearSelected!: number;
+  yearList: number[] = [2016, 2017, 2018, 2019, 2020, 2021, 2022];
 
   constructor(private teamService: TeamsListService) { }
 
@@ -22,12 +25,11 @@ export class TeamsListComponent implements OnInit {
   }
 
   getTeamPage(page : number){
-    this.teamService.getTeamList(page,'2022').subscribe(resp => {
+    this.teamService.getTeamList(page,2022).subscribe(resp => {
       this.teamList = [...resp.league.africa, ...resp.league.sacramento, 
         ...resp.league.standard, ...resp.league.utah, ...resp.league.vegas];
-
-      this.numPages = Math.ceil(this.teamList.length / 100);
-    })
+    });
+    return this.teamList;
   }
 
   getPhoto(obj: Team) {
@@ -38,6 +40,27 @@ export class TeamsListComponent implements OnInit {
 
   counter(){
     return new Array(this.numPages);
+  }
+
+  filterByYear(page: number, yearSelected: number){
+    
+      this.teamService.getTeamList(page, yearSelected).subscribe(resp => {
+        this.teamList = [...resp.league.standard];
+        if(resp.league.africa) {
+          this.teamList = [...this.teamList, ...resp.league.africa];
+        }
+        if(resp.league.sacramento) {
+          this.teamList = [...this.teamList, ...resp.league.sacramento];
+        }
+        if(resp.league.utah) {
+          this.teamList = [...this.teamList, ...resp.league.utah];
+        }
+        if(resp.league.vegas) {
+          this.teamList = [...this.teamList, ...resp.league.vegas];
+        }
+      });
+
+    
   }
 
 
