@@ -4,27 +4,30 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { MaterialImportsModule } from './material-imports/material-imports.module';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatSelectModule} from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PlayersListComponent } from './components/players-list/players-list.component';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { NgxPaginationModule } from 'ngx-pagination';
+import { TeamsListComponent } from './components/teams-list/teams-list.component';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    PlayersListComponent],
+    PlayersListComponent,
+    TeamsListComponent,
+  ],
+
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialImportsModule,
-    AppRoutingModule,
-    FormsModule,
     HttpClientModule,
+    MatSelectModule,
+    FormsModule
+    AppRoutingModule,
     ReactiveFormsModule,
     FlexLayoutModule,
     NgxPaginationModule
-
   ],
   providers: [],
   bootstrap: [AppComponent],
