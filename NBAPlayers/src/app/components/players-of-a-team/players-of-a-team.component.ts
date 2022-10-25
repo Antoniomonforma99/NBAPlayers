@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Team } from 'src/app/interfaces/team.interface';
+import { TeamDetailsService } from 'src/app/services/team-details.service';
 
 const URL_IMAGEN = 'https://cdn.nba.com/logos/nba'
 
@@ -11,24 +12,34 @@ const URL_IMAGEN = 'https://cdn.nba.com/logos/nba'
 })
 export class PlayersOfATeamComponent implements OnInit {
 
+  team: Team | undefined;
   
 
-  @Input('team')
-  team!: Team;
+  
 
-  constructor(private ruta: Router) { }
+  constructor(
+    private ruta: ActivatedRoute,
+    private service: TeamDetailsService
+    ) { }
 
   ngOnInit(): void {
+    this.loadTeam();
   }
 
-  selectTeam(team: Team){
-    this.team = team;
+  loadTeam(){
+    const teamId= this.ruta.snapshot.paramMap.get('id');
+    
+    console.log(teamId);
+    console.log(typeof(teamId));
+
   }
 
+
+  /*
   getPhoto() {
     return `${URL_IMAGEN}/${this.team.teamId}/global/L/logo.svg`
   }
-  
+  */
 
 
 
