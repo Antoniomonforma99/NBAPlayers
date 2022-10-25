@@ -12,6 +12,8 @@ import { PlayersListComponent } from './components/players-list/players-list.com
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { PgPrincipalComponent } from './components/pg-principal/pg-principal.component';
+import { PlayerProfileComponent } from './components/player-profile/player-profile.component';
+import { NgDialogAnimationService } from 'ng-dialog-animation';
 
 
 @NgModule({
@@ -20,6 +22,7 @@ import { PgPrincipalComponent } from './components/pg-principal/pg-principal.com
     PlayersListComponent,
     TeamsListComponent,
     PgPrincipalComponent,
+    PlayerProfileComponent,
   ],
 
   imports: [
@@ -34,7 +37,7 @@ import { PgPrincipalComponent } from './components/pg-principal/pg-principal.com
     FlexLayoutModule,
     NgxPaginationModule,
   ],
-  providers: [],
+  providers: [NgDialogAnimationService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
