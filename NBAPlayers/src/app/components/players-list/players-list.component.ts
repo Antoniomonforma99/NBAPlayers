@@ -7,7 +7,7 @@ import { PlayersListService } from 'src/app/services/players-list.service';
 @Component({
   selector: 'app-players-list',
   templateUrl: './players-list.component.html',
-  styleUrls: ['./players-list.component.css']
+  styleUrls: ['./players-list.component.css'],
 })
 export class PlayersListComponent implements OnInit {
   @ViewChild(MatAccordion)
@@ -19,34 +19,25 @@ export class PlayersListComponent implements OnInit {
   playerList: Player[] = [];
   numPages = 0;
   pageActual = 1;
-  buscar = "";
-  constructor(private playerService: PlayersListService) { }
+  buscar = '';
+  constructor(private playerService: PlayersListService) {}
 
   ngOnInit(): void {
 
-    if(this.buscar == ""){
       this.getPlayersPage();
-    }
+    
   }
   getUrlImagen(player: Player) {
-
     let id = player.personId;
 
-    return `https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/${id}.png`
-
-
+    return `https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/${id}.png`;
   }
   getPlayersPage() {
-
-
     this.playerService.getPlayers().subscribe((resp) => {
       this.playerList = resp.league.standard;
-
-
     });
-
   }
- /*  buscador() {
+  /*  buscador() {
     this.playerList.forEach(element => {
       if (element.firstName == this.buscar) {
 
@@ -56,5 +47,4 @@ export class PlayersListComponent implements OnInit {
       }
     });
   } */
-
 }
