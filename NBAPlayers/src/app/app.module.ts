@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PlayersListComponent } from './components/players-list/players-list.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { PgPrincipalComponent } from './components/pg-principal/pg-principal.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AppComponent,
     PlayersListComponent,
     TeamsListComponent,
+    PgPrincipalComponent,
   ],
 
   imports: [
