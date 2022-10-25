@@ -1,8 +1,10 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Inject, inject, OnInit, ViewChild } from '@angular/core';
 import { MatAccordion } from '@angular/material/expansion';
 import { MatPaginator } from '@angular/material/paginator';
+import { NgDialogAnimationService } from 'ng-dialog-animation';
 import { Player } from 'src/app/interfaces/players-list.interface';
 import { PlayersListService } from 'src/app/services/players-list.service';
+import { PlayerProfileComponent } from '../player-profile/player-profile.component';
 
 @Component({
   selector: 'app-players-list',
@@ -20,12 +22,15 @@ export class PlayersListComponent implements OnInit {
   numPages = 0;
   pageActual = 1;
   buscar = '';
-  constructor(private playerService: PlayersListService) {}
+  constructor(private dialog:NgDialogAnimationService,private playerService: PlayersListService) {
+
+
+  }
 
   ngOnInit(): void {
 
       this.getPlayersPage();
-    
+
   }
   getUrlImagen(player: Player) {
     let id = player.personId;
@@ -36,6 +41,16 @@ export class PlayersListComponent implements OnInit {
     this.playerService.getPlayers().subscribe((resp) => {
       this.playerList = resp.league.standard;
     });
+  }
+  mostrarDialog(playerDialog:Player){
+    this.dialog.open(PlayerProfileComponent,{
+      data:{player:playerDialog},
+      position:{right:'0'},
+      height:'100%',
+      animation:{to:'left'},
+      panelClass:'dialogPlayer'
+
+    })
   }
   /*  buscador() {
     this.playerList.forEach(element => {
