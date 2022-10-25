@@ -17,6 +17,7 @@ export class TeamsListComponent implements OnInit {
   numPages: number = 1;
   yearSelected!: number;
   yearList: number[] = [2016, 2017, 2018, 2019, 2020, 2021, 2022];
+  teamSelected!: Team;
 
   constructor(private teamService: TeamsListService) { }
 
@@ -59,8 +60,10 @@ export class TeamsListComponent implements OnInit {
           this.teamList = [...this.teamList, ...resp.league.vegas];
         }
       });
+  }
 
-    
+  onSelectTeam(team: Team){
+    this.teamSelected = team;
   }
 
 
