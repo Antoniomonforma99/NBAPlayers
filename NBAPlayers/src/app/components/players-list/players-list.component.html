@@ -44,6 +44,8 @@
       <p class="ce" *ngIf="!player.isActive">El jugador esta activo: No</p>
       <p class="ce">Número de Jersey : {{ player.jersey }}</p>
       <p class="ce">Estatúra : {{player.heightMeters}} m</p>
+      <button mat-button class="ce" (click)="mostrarDialog(player)">Ver estadísticas completas</button>
+
     </mat-expansion-panel>
   </mat-accordion>
   <div style="background-color: lightslategray; width: 100%">
