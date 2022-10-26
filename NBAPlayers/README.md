@@ -1,4 +1,14 @@
-[PORTADA] (src/imgs/1.jpg)
+# PROYECTO NBA API
+En esta página se puede consultar los equipos y los jugadores de las diferentes ligas de baloncesto, tambien nos ofrece la posibilidad de ver los detalles de cada jugador y sus estadísticas personales.
+
+# Autores 
+  ## Arturo Céspedes Pedrazas  | Github : [Perfil de github](https://github.com/ArturoCes)
+  
+  ## Antonio Montero | Github : [Perfil de github](https://github.com/Antoniomonforma99)
+  
+# Funcionalidades
+ 
+[PÁGINA PRINCIPAL](src/imgs/1.jpg) | [EQUIPOS](src/imgs/2.jpg) | [JUGADORES](src/imgs/3.jpg) | [DETALLES JUGADOR](src/imgs/4.jpg) | [ESTADÍSTICAS JUGADOR](src/imgs/5.jpg)
 
 # NBAPlayers
 
