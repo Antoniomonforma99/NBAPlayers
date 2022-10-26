@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PlayersListComponent } from './components/players-list/players-list.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { PlayersOfATeamComponent } from './components/players-of-a-team/players-of-a-team.component';
 import { PgPrincipalComponent } from './components/pg-principal/pg-principal.component';
 import { PlayerProfileComponent } from './components/player-profile/player-profile.component';
 import { NgDialogAnimationService } from 'ng-dialog-animation';
@@ -21,6 +22,7 @@ import { NgDialogAnimationService } from 'ng-dialog-animation';
     AppComponent,
     PlayersListComponent,
     TeamsListComponent,
+    PlayersOfATeamComponent
     PgPrincipalComponent,
     PlayerProfileComponent,
   ],
