@@ -1,13 +1,8 @@
-<img
-  src="https://www.pixelstalk.net/wp-content/uploads/2016/04/Duncan-Spurs-NBA-Wallpaper-HD.jpg"
-
-  class="cover"
-
-/>
-<!--
-    <input type="text" [(ngModel)]="buscar" >
-    <button> <mat-icon (click) ="buscador()">search</mat-icon></button>
- -->
+<div class="divBanner">
+  <a routerLink="/inicio"
+    ><img class="banner" src="../../../assets/banner.png" alt="NBA Players"
+  /></a>
+</div>
 <div
   class="background"
   fxLayout="row wrap"
@@ -21,23 +16,17 @@
         | paginate: { itemsPerPage: 9, currentPage: pageActual }
     "
   >
-    <mat-expansion-panel disabled class="eo">
-      <mat-expansion-panel-header class="eo">
-        <h1>
-          {{ player.firstName }}
-        </h1>
-
+    <h1>
+      {{ player.firstName }} {{player.lastName}}
+    </h1>
         <img
           mat-card-image
           [src]="getUrlImagen(player)"
           width="max-content"
-          height="max-content"
-          onerror="this.onerror = null; this.src = 'https:\/\/www.decoravinilos.es/947-big_default_2x/silueta-baloncesto-decoravinilos.jpg'" width="300px"
+          height="200px"
+          onerror="this.onerror = null; this.src = 'https:\/\/www.decoravinilos.es/947-big_default_2x/silueta-baloncesto-decoravinilos.jpg'"
           alt="Photo of a player"
         />
-      </mat-expansion-panel-header>
-    </mat-expansion-panel>
-
     <mat-expansion-panel class="expansion">
       <mat-expansion-panel-header class="ce">
         <mat-panel-title class="ce"> Información</mat-panel-title>
@@ -46,12 +35,17 @@
           <mat-icon>sports_basketball</mat-icon>
         </mat-panel-description>
       </mat-expansion-panel-header>
-      <p class="ce">Nombre completo: {{player.firstName}} {{player.lastName}}</p>
+      <p class="ce">
+        Nombre completo: {{ player.firstName }} {{ player.lastName }}
+      </p>
       <p class="ce">Años jugando de forma profesional: {{ player.yearsPro }}</p>
       <p class="ce">Año de debut profesional: {{ player.nbaDebutYear }}</p>
       <p class="ce" *ngIf="player.isActive">El jugador esta activo: Sí</p>
       <p class="ce" *ngIf="!player.isActive">El jugador esta activo: No</p>
-      <p class="ce">Número de Jersey : {{player.jersey}}</p>
+      <p class="ce">Número de Jersey : {{ player.jersey }}</p>
+      <p class="ce">Estatúra : {{player.heightMeters}} m</p>
+      <button mat-raised-button  (click)="mostrarDialog(player)">Ver estadísticas completas</button>
+
     </mat-expansion-panel>
   </mat-accordion>
   <div style="background-color: lightslategray; width: 100%">
