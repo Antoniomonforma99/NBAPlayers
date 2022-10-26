@@ -18,7 +18,7 @@
 ####Funcionalidades :
     
      · Ver jugadores o equipos
-        [(https://github.com/Antoniomonforma99/NBAPlayers/blob/main/NBAPlayers/imgs/1.jpg)](https://github.com/Antoniomonforma99/NBAPlayers/blob/main/NBAPlayers/src/imgs/1.jpg)
+      [PORTADA] (src/imgs/1.jpg)
       
      · Posibilidad de ver los detalles de un jugador en concreto
      ![4](https://user-images.githubusercontent.com/93126301/198023219-4359fc57-34c3-4897-9162-20e1efa04c11.jpg)
