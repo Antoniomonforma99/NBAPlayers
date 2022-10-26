@@ -9,7 +9,7 @@
 3. Funcionalidades (con capturas de pantalla)
 
 ###Esta página nos muestra la lista de equipos y jugadores de las ligas de baloncesto,tambien nos da la posibilidad de ver las estadísticas de cada jugador, más una descripción del mismo.
-      
+       [PORTADA] (src/imgs/1.jpg)
       ####Autores :
         >Arturo Céspedes Pedrazas  https://github.com/ArturoCes
         >Antonio Montero  github.com/Antoniomonforma99/
@@ -17,8 +17,8 @@
 
 ####Funcionalidades :
     
-     · Ver jugadores o equipos
-      [PORTADA] (src/imgs/1.jpg)
+      Ver jugadores o equipos
+     
       
      · Posibilidad de ver los detalles de un jugador en concreto
      ![4](https://user-images.githubusercontent.com/93126301/198023219-4359fc57-34c3-4897-9162-20e1efa04c11.jpg)
