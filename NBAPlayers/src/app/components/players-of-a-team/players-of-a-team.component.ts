@@ -10,12 +10,12 @@ const URL_IMAGEN = 'https://cdn.nba.com/logos/nba'
   templateUrl: './players-of-a-team.component.html',
   styleUrls: ['./players-of-a-team.component.css']
 })
-export class PlayersOfATeamComponent implements OnInit {
+
+export class PlayersOfATeamComponent implements OnInit {  
+
+  @Input() Team: Team | undefined;
 
   team: Team | undefined;
-  
-
-  
 
   constructor(
     private ruta: ActivatedRoute,
