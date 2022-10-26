@@ -1,0 +1,35 @@
+html {
+  background-image: url("https://i.pinimg.com/originals/cf/3b/64/cf3b646b11f44dcf8a548b4260a655f1.jpg") !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.divBanner {
+  text-align: center;
+}
+.banner {
+  height: 200px;
+  width: auto;
+}
+.teams {
+  width: 500px;
+  height: 500px;
+}
+.teams-image {
+  width: 600px;
+}
+.equipo {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+.name {
+  font-size: 30pt;
+  color: white;
+}
+#names {
+  text-decoration: none !important;
+}
