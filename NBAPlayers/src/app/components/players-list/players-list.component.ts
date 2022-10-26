@@ -14,8 +14,6 @@ import { PlayerProfileComponent } from '../player-profile/player-profile.compone
 export class PlayersListComponent implements OnInit {
   @ViewChild(MatAccordion)
   accordion!: MatAccordion;
-  @ViewChild(MatPaginator, { static: true })
-  paginator!: MatPaginator;
   dataSource: any;
   panelOpenState = false;
   playerList: Player[] = [];
