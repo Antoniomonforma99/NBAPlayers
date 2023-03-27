@@ -1,0 +1,56 @@
+<div class="divBanner">
+  <a routerLink="/inicio"
+    ><img class="banner" src="../../../assets/banner.png" alt="NBA Players"
+  /></a>
+</div>
+<div
+  class="background"
+  fxLayout="row wrap"
+  fxLayoutAlign="space-evenly center "
+  fxLayoutGap="20px"
+>
+  <mat-accordion
+    class="espacio"
+    *ngFor="
+      let player of playerList
+        | paginate: { itemsPerPage: 9, currentPage: pageActual }
+    "
+  >
+    <h1>
+      {{ player.firstName }} {{player.lastName}}
+    </h1>
+        <img
+          mat-card-image
+          [src]="getUrlImagen(player)"
+          width="max-content"
+          height="200px"
+          onerror="this.onerror = null; this.src = 'https:\/\/www.decoravinilos.es/947-big_default_2x/silueta-baloncesto-decoravinilos.jpg'"
+          alt="Photo of a player"
+        />
+    <mat-expansion-panel class="expansion">
+      <mat-expansion-panel-header class="ce">
+        <mat-panel-title class="ce"> Información</mat-panel-title>
+        <mat-panel-description class="ce">
+          Conoce los detalles de este jugador
+          <mat-icon>sports_basketball</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p class="ce">
+        Nombre completo: {{ player.firstName }} {{ player.lastName }}
+      </p>
+      <p class="ce">Años jugando de forma profesional: {{ player.yearsPro }}</p>
+      <p class="ce">Año de debut profesional: {{ player.nbaDebutYear }}</p>
+      <p class="ce" *ngIf="player.isActive">El jugador esta activo: Sí</p>
+      <p class="ce" *ngIf="!player.isActive">El jugador esta activo: No</p>
+      <p class="ce">Número de Jersey : {{ player.jersey }}</p>
+      <p class="ce">Estatúra : {{player.heightMeters}} m</p>
+      <button mat-raised-button  (click)="mostrarDialog(player)">Ver estadísticas completas</button>
+
+    </mat-expansion-panel>
+  </mat-accordion>
+  <div style="background-color: lightslategray; width: 100%">
+    <pagination-controls
+      (pageChange)="pageActual = $event"
+    ></pagination-controls>
+  </div>
+</div>

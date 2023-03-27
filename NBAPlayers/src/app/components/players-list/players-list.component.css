@@ -1,0 +1,50 @@
+html{
+  background-color: white ;
+  height: 100%;
+  font-family: 'AcademicM54' !important;
+  color: white;
+}
+.eo {
+  margin: 20px ;
+  font-size: larger;
+  font-weight: bold bolder;
+  color: white;
+  height: 300px;
+  background: linear-gradient(#f03232, #102aeb);
+
+}
+.expansion{
+  background: linear-gradient(#f03232, #102aeb);
+
+}
+.ce{
+  color: white;
+}
+.divBanner{
+  margin: 50px;
+  text-align: center;
+}
+.banner{
+  height: 200px;
+  width: auto;
+}
+
+.espacio  {
+ margin: 20px;
+ background: linear-gradient(#f03232, #102aeb);
+ justify-content: center;
+ text-align: center;
+ color: white;
+ border-radius: 1cm;
+}
+.background{
+
+  background-color: white;
+
+}
+.cover{
+  width:100% !important;
+  height:40% !important;
+  object-fit: cover !important;
+
+}
